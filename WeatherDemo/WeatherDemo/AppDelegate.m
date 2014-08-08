@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CityManager.h"
 
 @implementation AppDelegate
 
@@ -17,7 +18,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    
+    CityManager *manager = [CityManager new];
+    [manager refreshDatabaseFromNetworkCompletionHandler:^{
+    }];
+    
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -104,7 +111,7 @@
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"WeatherDemo.sqlite"];
-    
+    NSLog(@"%@", storeURL);
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
