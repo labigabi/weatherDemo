@@ -11,6 +11,8 @@
 		D03D39191994B2FA00C2A685 /* CityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D03D39181994B2FA00C2A685 /* CityManager.m */; };
 		D03D391C1994B4AF00C2A685 /* NetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D03D391B1994B4AF00C2A685 /* NetworkEngine.m */; };
 		D03D39221994BF6700C2A685 /* City+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D03D39211994BF6700C2A685 /* City+Additions.m */; };
+		D03E316F199CAF05001C6A8D /* WeatherDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03E316D199CAF05001C6A8D /* WeatherDetailsViewController.m */; };
+		D03E3170199CAF05001C6A8D /* WeatherDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03E316E199CAF05001C6A8D /* WeatherDetailsViewController.xib */; };
 		D04306AB199CA7890041D5D7 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = D04306AA199CA7890041D5D7 /* City.m */; };
 		D07A01141994ABE400145D7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07A01131994ABE400145D7A /* Foundation.framework */; };
 		D07A01161994ABE400145D7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07A01151994ABE400145D7A /* CoreGraphics.framework */; };
@@ -54,6 +56,9 @@
 		D03D391B1994B4AF00C2A685 /* NetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkEngine.m; sourceTree = "<group>"; };
 		D03D39201994BF6700C2A685 /* City+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+Additions.h"; sourceTree = "<group>"; };
 		D03D39211994BF6700C2A685 /* City+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "City+Additions.m"; sourceTree = "<group>"; };
+		D03E316C199CAF05001C6A8D /* WeatherDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDetailsViewController.h; sourceTree = "<group>"; };
+		D03E316D199CAF05001C6A8D /* WeatherDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailsViewController.m; sourceTree = "<group>"; };
+		D03E316E199CAF05001C6A8D /* WeatherDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherDetailsViewController.xib; sourceTree = "<group>"; };
 		D04306A9199CA7890041D5D7 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
 		D04306AA199CA7890041D5D7 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		D07A01101994ABE400145D7A /* WeatherDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +117,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D03E316A199CAEDA001C6A8D /* Search City */ = {
+			isa = PBXGroup;
+			children = (
+				D0FD1689199A0DF700EA74AD /* SearchCityViewController.h */,
+				D0FD168A199A0DF700EA74AD /* SearchCityViewController.m */,
+				D0FD168B199A0DF700EA74AD /* SearchCityViewController.xib */,
+			);
+			name = "Search City";
+			sourceTree = "<group>";
+		};
+		D03E316B199CAEE2001C6A8D /* Favourite city list */ = {
+			isa = PBXGroup;
+			children = (
+				D0FD1684199A04DD00EA74AD /* CityListViewController.h */,
+				D0FD1685199A04DD00EA74AD /* CityListViewController.m */,
+				D0FD1686199A04DD00EA74AD /* CityListViewController.xib */,
+			);
+			name = "Favourite city list";
+			sourceTree = "<group>";
+		};
 		D07A01071994ABE400145D7A = {
 			isa = PBXGroup;
 			children = (
@@ -161,12 +186,11 @@
 				D0FD167F199A046900EA74AD /* SplashViewController.h */,
 				D0FD1680199A046900EA74AD /* SplashViewController.m */,
 				D0FD1681199A046900EA74AD /* SplashViewController.xib */,
-				D0FD1684199A04DD00EA74AD /* CityListViewController.h */,
-				D0FD1685199A04DD00EA74AD /* CityListViewController.m */,
-				D0FD1686199A04DD00EA74AD /* CityListViewController.xib */,
-				D0FD1689199A0DF700EA74AD /* SearchCityViewController.h */,
-				D0FD168A199A0DF700EA74AD /* SearchCityViewController.m */,
-				D0FD168B199A0DF700EA74AD /* SearchCityViewController.xib */,
+				D03E316C199CAF05001C6A8D /* WeatherDetailsViewController.h */,
+				D03E316D199CAF05001C6A8D /* WeatherDetailsViewController.m */,
+				D03E316E199CAF05001C6A8D /* WeatherDetailsViewController.xib */,
+				D03E316B199CAEE2001C6A8D /* Favourite city list */,
+				D03E316A199CAEDA001C6A8D /* Search City */,
 				D07A012A1994ABE400145D7A /* Images.xcassets */,
 				D07A01271994ABE400145D7A /* WeatherDemo.xcdatamodeld */,
 				D07A011C1994ABE400145D7A /* Supporting Files */,
@@ -284,6 +308,7 @@
 				D0FD168D199A0DF700EA74AD /* SearchCityViewController.xib in Resources */,
 				D0FD1683199A046900EA74AD /* SplashViewController.xib in Resources */,
 				D07A012B1994ABE400145D7A /* Images.xcassets in Resources */,
+				D03E3170199CAF05001C6A8D /* WeatherDetailsViewController.xib in Resources */,
 				D0FD1688199A04DD00EA74AD /* CityListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04306AB199CA7890041D5D7 /* City.m in Sources */,
+				D03E316F199CAF05001C6A8D /* WeatherDetailsViewController.m in Sources */,
 				D03D39191994B2FA00C2A685 /* CityManager.m in Sources */,
 				D03D391C1994B4AF00C2A685 /* NetworkEngine.m in Sources */,
 				D07A01291994ABE400145D7A /* WeatherDemo.xcdatamodeld in Sources */,

@@ -9,6 +9,7 @@
 #import "CityListViewController.h"
 #import "SearchCityViewController.h"
 #import "CityManager.h"
+#import "WeatherDetailsViewController.h"
 
 @interface CityListViewController () <UITableViewDataSource, UITableViewDelegate, SearchCityViewControllerDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *cityListTableView;
@@ -75,6 +76,15 @@
     return cell;
 }
 
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    City *city = self.favoriteCities[indexPath.row];
+    
+    WeatherDetailsViewController *vc = [WeatherDetailsViewController new];
+    vc.city = city;
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 @end
