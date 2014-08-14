@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "CityManager.h"
+#import "SplashViewController.h"
+#import "CityListViewController.h"
 
 @implementation AppDelegate
 
@@ -15,20 +17,36 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+#define kFirstRun @"kFirstRun"
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    
-    CityManager *manager = [CityManager new];
-    [manager refreshDatabaseFromNetworkCompletionHandler:^{
-    }];
-    
-    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    CityManager *manager = [CityManager new];
+    
+    CityListViewController *cityListVc = [CityListViewController new];
+    
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cityListVc];
+    self.window.rootViewController = nc;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:kFirstRun] == nil) {
+        SplashViewController *splash = [SplashViewController new];
+        
+        [nc presentViewController:splash animated:NO completion:nil];
+        
+        [manager refreshDatabaseFromNetworkCompletionHandler:^{
+            [defaults setObject:@YES forKey:kFirstRun];
+            [defaults synchronize];
+            [splash dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

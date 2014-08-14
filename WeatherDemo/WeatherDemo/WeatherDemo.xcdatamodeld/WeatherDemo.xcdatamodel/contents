@@ -2,9 +2,13 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="City" representedClassName="City" syncable="YES">
         <attribute name="cityID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cityName" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="countryCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" indexed="YES" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="City" positionX="-1980" positionY="-252" width="128" height="75"/>
+        <element name="City" positionX="-3951" positionY="-1179" width="128" height="133"/>
     </elements>
 </model>

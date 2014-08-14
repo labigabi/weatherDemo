@@ -14,7 +14,9 @@ typedef void(^CityManagerDidFinishSearch)(NSArray *cities);
 @interface CityManager : NSObject
 
 - (void) refreshDatabaseFromNetworkCompletionHandler:(CityManagerDidFinishRefresh)onComplete;
-
 - (void) searchForCityWithString:(NSString*)partCityName completionHandler:(CityManagerDidFinishSearch)onComplete;
+
+- (void) saveFavoriteCities:(NSArray*)favCities;
+- (NSArray*) loadFavoriteCities;
 
 @end

@@ -10,8 +10,8 @@
 		65731163307B4C43844A80CC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D87CF991E84F98AB474415 /* libPods.a */; };
 		D03D39191994B2FA00C2A685 /* CityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D03D39181994B2FA00C2A685 /* CityManager.m */; };
 		D03D391C1994B4AF00C2A685 /* NetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = D03D391B1994B4AF00C2A685 /* NetworkEngine.m */; };
-		D03D391F1994BEE400C2A685 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = D03D391E1994BEE400C2A685 /* City.m */; };
 		D03D39221994BF6700C2A685 /* City+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D03D39211994BF6700C2A685 /* City+Additions.m */; };
+		D04306AB199CA7890041D5D7 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = D04306AA199CA7890041D5D7 /* City.m */; };
 		D07A01141994ABE400145D7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07A01131994ABE400145D7A /* Foundation.framework */; };
 		D07A01161994ABE400145D7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07A01151994ABE400145D7A /* CoreGraphics.framework */; };
 		D07A01181994ABE400145D7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07A01171994ABE400145D7A /* UIKit.framework */; };
@@ -27,6 +27,12 @@
 		D07A01351994ABE400145D7A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07A01191994ABE400145D7A /* CoreData.framework */; };
 		D07A013D1994ABE400145D7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D07A013B1994ABE400145D7A /* InfoPlist.strings */; };
 		D07A013F1994ABE400145D7A /* WeatherDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D07A013E1994ABE400145D7A /* WeatherDemoTests.m */; };
+		D0FD1682199A046900EA74AD /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD1680199A046900EA74AD /* SplashViewController.m */; };
+		D0FD1683199A046900EA74AD /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FD1681199A046900EA74AD /* SplashViewController.xib */; };
+		D0FD1687199A04DD00EA74AD /* CityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD1685199A04DD00EA74AD /* CityListViewController.m */; };
+		D0FD1688199A04DD00EA74AD /* CityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FD1686199A04DD00EA74AD /* CityListViewController.xib */; };
+		D0FD168C199A0DF700EA74AD /* SearchCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD168A199A0DF700EA74AD /* SearchCityViewController.m */; };
+		D0FD168D199A0DF700EA74AD /* SearchCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FD168B199A0DF700EA74AD /* SearchCityViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +52,10 @@
 		D03D39181994B2FA00C2A685 /* CityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityManager.m; sourceTree = "<group>"; };
 		D03D391A1994B4AF00C2A685 /* NetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkEngine.h; sourceTree = "<group>"; };
 		D03D391B1994B4AF00C2A685 /* NetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkEngine.m; sourceTree = "<group>"; };
-		D03D391D1994BEE400C2A685 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
-		D03D391E1994BEE400C2A685 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		D03D39201994BF6700C2A685 /* City+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+Additions.h"; sourceTree = "<group>"; };
 		D03D39211994BF6700C2A685 /* City+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "City+Additions.m"; sourceTree = "<group>"; };
+		D04306A9199CA7890041D5D7 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		D04306AA199CA7890041D5D7 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		D07A01101994ABE400145D7A /* WeatherDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07A01131994ABE400145D7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D07A01151994ABE400145D7A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,6 +74,15 @@
 		D07A013A1994ABE400145D7A /* WeatherDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeatherDemoTests-Info.plist"; sourceTree = "<group>"; };
 		D07A013C1994ABE400145D7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D07A013E1994ABE400145D7A /* WeatherDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherDemoTests.m; sourceTree = "<group>"; };
+		D0FD167F199A046900EA74AD /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		D0FD1680199A046900EA74AD /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		D0FD1681199A046900EA74AD /* SplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		D0FD1684199A04DD00EA74AD /* CityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityListViewController.h; sourceTree = "<group>"; };
+		D0FD1685199A04DD00EA74AD /* CityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityListViewController.m; sourceTree = "<group>"; };
+		D0FD1686199A04DD00EA74AD /* CityListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityListViewController.xib; sourceTree = "<group>"; };
+		D0FD1689199A0DF700EA74AD /* SearchCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCityViewController.h; sourceTree = "<group>"; };
+		D0FD168A199A0DF700EA74AD /* SearchCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCityViewController.m; sourceTree = "<group>"; };
+		D0FD168B199A0DF700EA74AD /* SearchCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchCityViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,12 +152,21 @@
 				D07A01251994ABE400145D7A /* AppDelegate.m */,
 				D03D39171994B2FA00C2A685 /* CityManager.h */,
 				D03D39181994B2FA00C2A685 /* CityManager.m */,
-				D03D391D1994BEE400C2A685 /* City.h */,
-				D03D391E1994BEE400C2A685 /* City.m */,
+				D04306A9199CA7890041D5D7 /* City.h */,
+				D04306AA199CA7890041D5D7 /* City.m */,
 				D03D39201994BF6700C2A685 /* City+Additions.h */,
 				D03D39211994BF6700C2A685 /* City+Additions.m */,
 				D03D391A1994B4AF00C2A685 /* NetworkEngine.h */,
 				D03D391B1994B4AF00C2A685 /* NetworkEngine.m */,
+				D0FD167F199A046900EA74AD /* SplashViewController.h */,
+				D0FD1680199A046900EA74AD /* SplashViewController.m */,
+				D0FD1681199A046900EA74AD /* SplashViewController.xib */,
+				D0FD1684199A04DD00EA74AD /* CityListViewController.h */,
+				D0FD1685199A04DD00EA74AD /* CityListViewController.m */,
+				D0FD1686199A04DD00EA74AD /* CityListViewController.xib */,
+				D0FD1689199A0DF700EA74AD /* SearchCityViewController.h */,
+				D0FD168A199A0DF700EA74AD /* SearchCityViewController.m */,
+				D0FD168B199A0DF700EA74AD /* SearchCityViewController.xib */,
 				D07A012A1994ABE400145D7A /* Images.xcassets */,
 				D07A01271994ABE400145D7A /* WeatherDemo.xcdatamodeld */,
 				D07A011C1994ABE400145D7A /* Supporting Files */,
@@ -257,7 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D07A01201994ABE400145D7A /* InfoPlist.strings in Resources */,
+				D0FD168D199A0DF700EA74AD /* SearchCityViewController.xib in Resources */,
+				D0FD1683199A046900EA74AD /* SplashViewController.xib in Resources */,
 				D07A012B1994ABE400145D7A /* Images.xcassets in Resources */,
+				D0FD1688199A04DD00EA74AD /* CityListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,13 +336,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04306AB199CA7890041D5D7 /* City.m in Sources */,
 				D03D39191994B2FA00C2A685 /* CityManager.m in Sources */,
 				D03D391C1994B4AF00C2A685 /* NetworkEngine.m in Sources */,
-				D03D391F1994BEE400C2A685 /* City.m in Sources */,
 				D07A01291994ABE400145D7A /* WeatherDemo.xcdatamodeld in Sources */,
+				D0FD1682199A046900EA74AD /* SplashViewController.m in Sources */,
+				D0FD1687199A04DD00EA74AD /* CityListViewController.m in Sources */,
 				D07A01261994ABE400145D7A /* AppDelegate.m in Sources */,
 				D07A01221994ABE400145D7A /* main.m in Sources */,
 				D03D39221994BF6700C2A685 /* City+Additions.m in Sources */,
+				D0FD168C199A0DF700EA74AD /* SearchCityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

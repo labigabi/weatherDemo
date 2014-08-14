@@ -36,24 +36,19 @@
 }
 
 - (void) removeAllCities{
-    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
-    NSManagedObjectContext *context = [appdelegate managedObjectContext];
     NSFetchRequest *fetchRequest = [NSFetchRequest new];
-    [fetchRequest setEntity:[NSEntityDescription entityForName:@"City" inManagedObjectContext:context]];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"City" inManagedObjectContext:[self context]]];
     [fetchRequest setIncludesPropertyValues:NO];
     
     NSError *error;
-    NSArray *allCities = [context executeFetchRequest:fetchRequest error:&error];
+    NSArray *allCities = [[self context] executeFetchRequest:fetchRequest error:&error];
     if (error) {
         NSLog(@"ajjajj: %@", error);
     }else{
         for (City *actCity in allCities) {
-            [context deleteObject:actCity];
+            [[self context] deleteObject:actCity];
         }
-        [context save:&error];
-        if (error) {
-            NSLog(@"error saving after delete");
-        }
+        [self saveContext];
     }
 }
 
@@ -62,32 +57,101 @@
     
     for (NSString *actRow in rows) {
         NSArray *items = [actRow componentsSeparatedByString:@"\t"];
-        if ([items count] >= 2) {
-            NSLog(@"%@ - %@", items[1], items[0]);
+        if ([items count] >= 5) {
+//            NSLog(@"%@", items);
             
             NSNumber *cityId = @([items[0] integerValue]);
-            [self addCityWithName:items[1] cityID:cityId];
+            NSString *cityName = items[1];
+            NSString *latitude = items[2];
+            NSString *longitude = items[3];
+            NSString *countryCode = items[4];
+            
+            [self addCityWithName:cityName cityID:cityId countryCode:countryCode latitude:latitude longitude:longitude];
         }
     }
     
-    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
-    [appdelegate saveContext];
+    [self saveContext];
 }
 
-- (void) addCityWithName:(NSString*)cityName cityID:(NSNumber*)cityID{
-    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
-    NSManagedObjectContext *context = appdelegate.managedObjectContext;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"City" inManagedObjectContext:context];
+- (void) addCityWithName:(NSString*)cityName
+                  cityID:(NSNumber*)cityID
+             countryCode:(NSString*)countryCode
+                latitude:(NSString*)latitude
+               longitude:(NSString*)longitude{
     
-    City *act = [[City alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"City" inManagedObjectContext:[self context]];
+    
+    City *act = [[City alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:[self context]];
     act.cityName = cityName;
     act.cityID = cityID;
+    act.countryCode = countryCode;
+    act.longitude = longitude;
+    act.latitude = latitude;
 }
 
 - (void) searchForCityWithString:(NSString*)partCityName completionHandler:(CityManagerDidFinishSearch)onComplete{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"City" inManagedObjectContext:[self context]];
+    [fetchRequest setEntity:entity];
+    // Specify criteria for filtering which objects to fetch
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"cityName BEGINSWITH[cd] %@", partCityName];
+    [fetchRequest setPredicate:predicate];
+    // Specify how the fetched objects should be sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"cityName"
+                                                                   ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
     
+    NSError *error = nil;
+    NSArray *fetchedObjects = [[self context] executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects == nil) {
+        NSLog(@"ERROR: %@", error);
+    }
     
+    NSLog(@"result: %@", fetchedObjects);
+    
+    onComplete(fetchedObjects);
 }
 
+- (void) saveFavoriteCities:(NSArray*)favCities{
+    for (City *actCity in favCities) {
+        actCity.favorite = @YES;
+    }
+    [self saveContext];
+}
+
+- (NSArray*) loadFavoriteCities{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"City" inManagedObjectContext:[self context]];
+    [fetchRequest setEntity:entity];
+    // Specify criteria for filtering which objects to fetch
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"favorite = YES"];
+    [fetchRequest setPredicate:predicate];
+    // Specify how the fetched objects should be sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"cityName"
+                                                                   ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [[self context] executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects == nil) {
+        NSLog(@"ERROR: %@", error);
+    }
+    
+    NSLog(@"result: %@", fetchedObjects);
+    
+    return fetchedObjects;
+}
+
+
+- (NSManagedObjectContext*) context{
+    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = appdelegate.managedObjectContext;
+    return context;
+}
+
+- (void) saveContext{
+    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
+    [appdelegate saveContext];
+}
 
 @end

@@ -11,7 +11,7 @@
 @implementation City (Additions)
 
 - (NSString*) description{
-    return [NSString stringWithFormat:@"%@[%@]", self.cityName, self.cityID];
+    return [NSString stringWithFormat:@"%@[%@] - %@, %@ %@", self.cityName, self.countryCode, self.cityID, self.latitude, self.longitude];
 }
 
 @end
